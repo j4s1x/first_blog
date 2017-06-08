@@ -1,0 +1,14 @@
+{% extends "blogs/base.html" %}
+{% block content %}
+  <ul>
+    {% for post in content %}
+      <li>
+        <h3><b>{{ post.date_added|date:'M d, Y H:i' }}</h3>
+        <h2>{{ post.title }}</h2></b>
+        <p>{{ post.text|truncatewords:10 }}</p> <!--only first 10 words returned -->
+      </li>
+    {% empty %}
+      <li>No posts as of yet</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

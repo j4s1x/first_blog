@@ -1,0 +1,8 @@
+Jun 6 2017:
+Just created admin superuser registered blog title class in models and admin.
+Next step create article blog entries.
+June 6 2017
+created index page and a couple test articles.  Want to make it so that it only shows first say...
+50 characters of the post.  In order to read full article must click link to go to article page
+and it will display it in full.  Also want it so that only 5 posts are displayed on the front page
+and that the rest go into a seperate web page as "archives"

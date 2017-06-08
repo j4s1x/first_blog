@@ -1,0 +1,14 @@
+Creating an app which is esentially just a blog.
+Going to take it simple.  There will be a home page with the blog feed.
+Each post will have a "title" and an "entry".
+No user accounts need to be set up.  The blog user will use the /admin page
+to make their posts.
+
+There should also be a link at the top of the page that links to various social
+media accounts as well as a link to older articles.  I would say that having 5 articles
+on the main page at a time is good enough.
+
+Once it is up, running, styled, and deployed, I will look at adding the ability
+for a user system to be added and be allowed to post comments on the blog posts.
+These comments should be limited to a certain length to avoid spam.  This is to
+be done after the first part of the project is complete.
