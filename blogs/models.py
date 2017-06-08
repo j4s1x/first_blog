@@ -8,4 +8,4 @@ class Posts(models.Model):
 
     def __str__(self):
         '''return representation of model'''
-        return self.title + self.text[:30]
+        return self.title + self.text
