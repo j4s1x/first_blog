@@ -6,5 +6,9 @@ from . import views
 urlpatterns = [
     #home page
     url(r'^$', views.index, name='index'), # ^$ beginning to end of string
-    url(r'^article/(?P<article_id>\d+)/$', views.article, name='article'), #link to specific article page
-]
+    #article page
+    url(r'^articles/$', views.articles, name = 'articles'),
+    #specific article
+    url(r'^articles/(?P<article_id>\d+)/$',views.article, name='article')
+    # comment out for bugs url(r'^articles/article/(?P<article_id>\d+)/$', views.article, name = 'article'),
+    ]

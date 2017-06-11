@@ -1,11 +1,12 @@
 {% extends "blogs/base.html" %}
 {% block content %}
   <ul>
-    {% for post in content %}
+    {% for article in articles %}
       <li>
-        <h3><b>{{ post.date_added|date:'M d, Y H:i' }}</h3>
-        <h2>{{ post.title }}</h2></b>
-        <p>{{ post.text|truncatewords:10 }}</p> <!--only first 10 words returned -->
+        <a href = "{% url 'blogs:article' article.id %}">{{ article }}</a>
+        <h3><b>{{ article.date_added|date:'M d, Y H:i' }}</h3>
+        <h2>{{ article.title }}</h2></b>
+        <p>{{ article.text|truncatewords:10 }}</p> <!--only first 10 words returned -->
       </li>
     {% empty %}
       <li>No posts as of yet</li>
