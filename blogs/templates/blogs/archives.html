@@ -3,7 +3,8 @@
   <ul>
     {% for article in archives %}
       <li>
-        <a href ="{% url 'blogs:article' article.id %}">{{ article }}</a>
+        <h3><a href = "{% url 'blogs:article' article.id %}">{{ article.title }}</a></h3>
+        <p>{{ article.text|truncatewords:50 }}</p>
       </li>
     {% endfor %}
   </ul>

@@ -7,8 +7,8 @@ urlpatterns = [
     #home page
     url(r'^$', views.index, name='index'), # ^$ beginning to end of string
     #article page
-    url(r'^articles/$', views.articles, name = 'articles'),
+    url(r'^archives/$', views.archives, name = 'archives'),
     #specific article
-    url(r'^articles/(?P<article_id>\d+)/$',views.article, name='article')
+    url(r'^archives/(?P<article_id>\d+)/$',views.article, name='article')
     # comment out for bugs url(r'^articles/article/(?P<article_id>\d+)/$', views.article, name = 'article'),
     ]

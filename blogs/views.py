@@ -6,13 +6,13 @@ from django.http import HttpResponseRedirect
 def index(request):
     '''show some info'''
     articles = Posts.objects.order_by('-date_added')
-    context = {'articles': articles[:4]} #splice indicates that only four blog posts will be shown
+    context = {'articles': articles[:4]} #splice indicates that only four blog posts will be shown.  Very important.
     return render(request, 'blogs/index.html', context)
 
-def articles(request):
-    articles = Posts.objects.order_by('-date_added')
-    context = {'articles': articles}
-    return render(request, 'blogs/articles.html', context)
+def archives(request):
+    archives = Posts.objects.order_by('-date_added')
+    context = {'archives': archives}
+    return render(request, 'blogs/archives.html', context)
 
 def article(request, article_id):
     article = Posts.objects.get(id=article_id)
