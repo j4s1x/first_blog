@@ -1,5 +1,25 @@
 {% extends "blogs/base.html" %}
+
 {% block content %}
+
 <h1>{{ article.title }}</h1>
 <p>{{ article.text }}</p>
+
+<p>Add a comment</p>
+<form action="{% url 'blogs:article' article.id %}" method='post'>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button name='submit'>add comment</button>
+</form>
+
+<h2>Comments:</h2>
+
+{% for comment in comments %}
+  <h3>{{ comment.name }}</h3>
+  <p>{{ comment.text }}</p>
+{% empty %}
+  <p>no comments</p>
+
+{% endfor %}
+
 {% endblock content %}
