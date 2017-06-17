@@ -10,5 +10,4 @@ urlpatterns = [
     url(r'^archives/$', views.archives, name = 'archives'),
     #specific article
     url(r'^archives/(?P<article_id>\d+)/$',views.article, name='article')
-    # comment out for bugs url(r'^articles/article/(?P<article_id>\d+)/$', views.article, name = 'article'),
     ]

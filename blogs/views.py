@@ -18,7 +18,6 @@ def archives(request):
 def article(request, article_id):
     article = Posts.objects.get(id=article_id)
     comments = article.comments_set.order_by('-date_added')
-
     if request.method != 'POST':
         #no data submitted; create blank form
         form = CommentForm()
