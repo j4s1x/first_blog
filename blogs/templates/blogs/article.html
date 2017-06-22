@@ -9,12 +9,12 @@
 <form action="{% url 'blogs:article' article.id %}" method='post'>
   {% csrf_token %}
   {{ form.as_p }}
-  <button name='submit'>add comment</button>
+  <button name="submit">add comment</button>
 </form>
 
 <h2>Comments:</h2>
 
-{% for comment in comments %}
+{% for comment in comm %}
   <h3>{{ comment.name }}</h3>
   <p>{{ comment.text }}</p>
 {% empty %}

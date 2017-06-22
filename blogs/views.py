@@ -17,18 +17,14 @@ def archives(request):
 
 def article(request, article_id):
     article = Posts.objects.get(id=article_id)
-    comments = article.comments_set.order_by('-date_added')
+    comm = article.comments_set.order_by('-date_added')
     if request.method != 'POST':
-        #no data submitted; create blank form
         form = CommentForm()
     else:
-        #POST data submitted, process data
         form = CommentForm(data=request.POST)
         if form.is_valid():
-            new_comment = form.save(commit=False)
-            new_comment.comments = comments
-            new_comment.save()
+            new_entry = form.save(commit=False)
+            new_entry.save()
             return HttpResponseRedirect(reverse('blogs:article', args=[article_id]))
-
-    context = {'article': article, 'comments': comments, 'form': form}
+    context = {'article': article,'form':form, 'comm': comm}
     return render(request, 'blogs/article.html', context)
