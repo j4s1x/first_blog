@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Posts
+from .models import Comments
 from .forms import CommentForm
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
@@ -17,13 +18,15 @@ def archives(request):
 
 def article(request, article_id):
     article = Posts.objects.get(id=article_id)
-    comm = article.comments_set.order_by('-date_added')
+    post = Posts.objects.get(id=article_id)
+    comm = post.comments_set.order_by('-date_added')
     if request.method != 'POST':
         form = CommentForm()
     else:
         form = CommentForm(data=request.POST)
         if form.is_valid():
             new_entry = form.save(commit=False)
+            new_entry.post = post
             new_entry.save()
             return HttpResponseRedirect(reverse('blogs:article', args=[article_id]))
     context = {'article': article,'form':form, 'comm': comm}
