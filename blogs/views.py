@@ -31,3 +31,6 @@ def article(request, article_id):
             return HttpResponseRedirect(reverse('blogs:article', args=[article_id]))
     context = {'article': article,'form':form, 'comm': comm}
     return render(request, 'blogs/article.html', context)
+
+def about(request):
+    return render(request, 'blogs/aboutauthor.html')

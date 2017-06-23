@@ -10,4 +10,6 @@ urlpatterns = [
     url(r'^archives/$', views.archives, name = 'archives'),
     #specific article, comments go on this page too!
     url(r'^archives/(?P<article_id>\d+)/$',views.article, name='article'),
+    #add an about me page
+    url(r'^about/$', views.about, name='about')
     ]

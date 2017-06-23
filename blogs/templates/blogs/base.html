@@ -1,6 +1,26 @@
-<p>
-  <a href="{% url 'blogs:index' %}">Blog site</a>
-  <a href="{% url 'blogs:archives' %}">Archives</a>
-</p>
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The Blog Title</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+  </head>
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="active" href="{% url 'blogs:index' %}">Home</a>
+          <a class="active" href="{% url 'blogs:archives' %}">Archives</a>
+          <a class="active" href="{% url 'blogs:about' %}">About The Author</a>
+        </nav>
+      </div>
+    </div>
+  </body>
 
 {% block content %} {% endblock content %}
