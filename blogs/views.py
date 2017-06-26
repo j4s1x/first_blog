@@ -18,7 +18,7 @@ def archives(request):
 
 def article(request, article_id):
     article = Posts.objects.get(id=article_id)
-    post = Posts.objects.get(id=article_id)
+    post = Posts.objects.get(id=article_id) #important...calls the ForeignKey for database
     comm = post.comments_set.order_by('-date_added')
     if request.method != 'POST':
         form = CommentForm()
