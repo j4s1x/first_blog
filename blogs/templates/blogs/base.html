@@ -9,18 +9,15 @@
     <title>The Blog Title</title>
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-
   </head>
   <body>
-    <div class="navbar-wrapper">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="active" href="{% url 'blogs:index' %}">Home</a>
-          <a class="active" href="{% url 'blogs:archives' %}">Archives</a>
-          <a class="active" href="{% url 'blogs:about' %}">About The Author</a>
-        </nav>
-      </div>
-    </div>
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <a href="{% url 'blogs:index' %}">Home</a>
+          <a href="{% url 'blogs:archives' %}">Archives</a>
+          <a href="{% url 'blogs:about' %}">About The Author</a>
+
   </body>
 
 {% block content %} {% endblock content %}
