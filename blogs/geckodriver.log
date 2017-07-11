@@ -1,0 +1,12 @@
+1499750818475	geckodriver	INFO	Listening on 127.0.0.1:47370
+1499750819632	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+
+(firefox:14059): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:14059): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:14059): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:14059): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1499750824443	Marionette	INFO	Listening on port 45606
+1499750824962	Marionette	INFO	New connections will no longer be accepted
