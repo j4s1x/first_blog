@@ -1,11 +1,10 @@
 {% extends "blogs/base.html" %}
-{% block content %}
-  <ul>
+{% block header %}
+<div class="blog-post">
     {% for article in archives %}
-      <li>
-        <h3><a href = "{% url 'blogs:article' article.id %}">{{ article.title }}</a></h3>
+        <p>{{ article.date_added|date:'M d, Y H:i' }}</p>
+        <p><a href = "{% url 'blogs:article' article.id %}">{{ article.title }}</a></p>
         <p>{{ article.text|truncatewords:50 }}</p>
-      </li>
     {% endfor %}
-  </ul>
-{% endblock content %}
+</div>
+{% endblock header %}

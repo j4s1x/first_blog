@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 def index(request):
     '''show some info'''
     articles = Posts.objects.order_by('-date_added')
-    context = {'articles': articles[:4]} #splice indicates that only four blog posts will be shown.  Very important.
+    context = {'articles': articles[:3]} #splice indicates that only 3 blog posts will be shown.
     return render(request, 'blogs/index.html', context)
 
 def archives(request):
@@ -35,6 +35,7 @@ def article(request, article_id):
 def about(request):
     return render(request, 'blogs/aboutauthor.html')
 
+# css style information below
 '''
 <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
 <link rel="stylesheet" href="{% static '/css/bootstrap-theme.min.css' %}">
