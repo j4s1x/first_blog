@@ -1,25 +1,25 @@
 {% extends "blogs/base.html" %}
+{% block header %}
+<div class="blog-post">
+  <p>{{ article.title }}</p>
+    <p>{{ article.text }}</p>
+</div>
+  <p>Add a comment</p>
+  <form action="{% url 'blogs:article' article.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <nav>
+    <button class="pager" name="submit">add comment</button>
+  </nav>
+  </form>
 
-{% block content %}
+  <h2>Comments:</h2>
 
-<h1>{{ article.title }}</h1>
-<p>{{ article.text }}</p>
-
-<p>Add a comment</p>
-<form action="{% url 'blogs:article' article.id %}" method='post'>
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button name="submit">add comment</button>
-</form>
-
-<h2>Comments:</h2>
-
-{% for comment in comm %}
+    {% for comment in comm %}
   <h3>{{ comment.name }}</h3>
   <p>{{ comment.text }}</p>
-{% empty %}
+    {% empty %}
   <p>no comments</p>
-
 {% endfor %}
 
-{% endblock content %}
+{% endblock header %}
