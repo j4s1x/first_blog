@@ -34,3 +34,9 @@ def article(request, article_id):
 
 def about(request):
     return render(request, 'blogs/aboutauthor.html')
+
+'''
+<link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/bootstrap-theme.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/blog.css' %}">
+'''

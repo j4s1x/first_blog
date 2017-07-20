@@ -1,0 +1,14 @@
+{% extends "blogs/base.html" %}
+{% block content %}
+  <ul>
+    {% for article in articles %}
+      <li>
+        <h3><b>{{ article.date_added|date:'M d, Y H:i' }}</h3>
+        <a href = "{% url 'blogs:article' article.id %}">{{ article.title }}</a>
+        <p>{{ article.text|truncatewords:50 }}</p> <!--only first 10 words returned -->
+      </li>
+    {% empty %}
+      <li>No posts as of yet</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}
